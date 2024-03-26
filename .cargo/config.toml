@@ -1,0 +1,24 @@
+[unstable]
+mtime-on-use = true
+profile-rustflags = true
+codegen-backend = true
+trim-paths = true
+gc = true
+
+[unstable.git]
+shallow_index = true
+shallow_deps = true
+
+[unstable.gitoxide]
+shallow_index = true
+shallow_deps = true
+fetch = true
+checkout = true
+internal_use_git2 = false
+
+[profile.dev]
+trim-paths = "all"
+
+[profile.release]
+trim-paths = ["object", "diagnostics"]
+
