@@ -1,2 +1,2 @@
 #!/bin/bash
-exec zig ranlib "$@"
+exec "/home/noel/.local/share/zman/master/zig" ranlib "$@"

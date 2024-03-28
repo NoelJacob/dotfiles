@@ -1,2 +1,2 @@
 #!/bin/bash
-exec zig lib "$@"
+exec "/home/noel/.local/share/zman/master/zig" lib "$@"

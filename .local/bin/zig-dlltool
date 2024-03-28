@@ -1,2 +1,2 @@
 #!/bin/bash
-exec zig dlltool "$@"
+exec "/home/noel/.local/share/zman/master/zig" dlltool "$@"

@@ -1,2 +1,2 @@
 #!/bin/bash
-exec zig c++ "$@"
+exec "/home/noel/.local/share/zman/master/zig" c++ "$@"

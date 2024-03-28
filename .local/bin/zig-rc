@@ -1,2 +1,2 @@
 #!/bin/bash
-exec zig rc "$@"
+exec "/home/noel/.local/share/zman/master/zig" rc "$@"
