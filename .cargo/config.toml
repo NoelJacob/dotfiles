@@ -16,8 +16,8 @@ checkout = true
 internal_use_git2 = false
 
 [profile.dev]
-trim-paths = "all"
+# trim-paths = "all"
 
 [profile.release]
-trim-paths = ["object", "diagnostics"]
+# trim-paths = ["object", "diagnostics"]
 

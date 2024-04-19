@@ -74,7 +74,7 @@ time_format = "%T"
 [character]
 error_symbol = "❗"
 # success_symbol = "[λ](bold red)"
-success_symbol = " 💨"
+success_symbol = "💨"
 # error_symbol = "💨"
 disabled = false
 
@@ -120,7 +120,7 @@ symbol = " "
 symbol = " "
 
 [nim]
-symbol = " "
+symbol = "󰆥 "
 
 [nix_shell]
 symbol = " "
@@ -129,7 +129,7 @@ symbol = " "
 symbol = " "
 
 [package]
-symbol = " "
+symbol = "󰏗 "
 
 [perl]
 symbol = " "
