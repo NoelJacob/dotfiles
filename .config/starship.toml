@@ -73,8 +73,8 @@ time_format = "%T"
 # Prompt: param 2
 [character]
 error_symbol = "❗"
-# success_symbol = "[λ](bold red)"
-success_symbol = "💨"
+success_symbol = "[󰫢](bold yellow)"
+# success_symbol = "💨"
 # error_symbol = "💨"
 disabled = false
 
