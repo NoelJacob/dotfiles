@@ -82,3 +82,5 @@ alias jctl="journalctl -p 3 -xb"
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
 eval "$(zoxide init bash)"
+
+export PATH="$HOME/.bun/bin:$HOME/.local/bin:$PATH"

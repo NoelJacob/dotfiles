@@ -1,3 +1,4 @@
+
 ## Set values
 # Hide welcome message & ensure we are reporting fish as shell
 set fish_greeting
@@ -23,18 +24,18 @@ set -U __done_notification_urgency_level low
 # end
 
 # Add ~/.local/bin to PATH
-if test -d ~/.local/bin
-    if not contains -- ~/.local/bin $PATH
-        set -p PATH ~/.local/bin
-    end
-end
+# if test -d ~/.local/bin
+#     if not contains -- ~/.local/bin $PATH
+#         set -p PATH ~/.local/bin
+#     end
+# end
 
 # Add depot_tools to PATH
-if test -d ~/Applications/depot_tools
-    if not contains -- ~/Applications/depot_tools $PATH
-        set -p PATH ~/Applications/depot_tools
-    end
-end
+# if test -d ~/Applications/depot_tools
+#     if not contains -- ~/Applications/depot_tools $PATH
+#         set -p PATH ~/Applications/depot_tools
+#     end
+# end
 
 
 ## Starship prompt
@@ -171,3 +172,4 @@ alias rip 'expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" | sort | tail -200 | nl'
 # end
 
 zoxide init fish | source
+set -gx PATH ~/.bun/bin ~/.local/bin ~/Applications/depot_tools $PATH
