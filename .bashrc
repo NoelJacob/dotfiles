@@ -83,4 +83,7 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
 eval "$(zoxide init bash)"
 
-export PATH="$HOME/.bun/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH:$HOME/.bun/bin:$HOME/.cargo/bin:$HOME/fvm/default/bin"
+export JAVA_HOME=/usr/lib/jvm/default
+export ANDROID_HOME="$HOME/.androidsdk/Sdk"
+export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
