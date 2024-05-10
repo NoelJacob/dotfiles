@@ -176,4 +176,4 @@ set -gx PATH ~/.local/bin ~/Applications/depot_tools $PATH ~/.bun/bin ~/.cargo/b
 set -gx ANDROID_HOME "$HOME/.androidsdk/Sdk"
 set -gx NDK_HOME "$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
 alias rr "rm -rf"
-alias clean "rm -rf .* *"
+alias clean "rm -rf .*; rm -rf *"

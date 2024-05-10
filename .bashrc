@@ -88,4 +88,4 @@ export JAVA_HOME=/usr/lib/jvm/default
 export ANDROID_HOME="$HOME/.androidsdk/Sdk"
 export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
 alias rr="rm -rf"
-alias clean="rm -rf .* *"
+alias clean="rm -rf .*; rm -rf *"
