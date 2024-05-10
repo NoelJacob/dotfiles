@@ -175,3 +175,5 @@ zoxide init fish | source
 set -gx PATH ~/.local/bin ~/Applications/depot_tools $PATH ~/.bun/bin ~/.cargo/bin ~/fvm/default/bin
 set -gx ANDROID_HOME "$HOME/.androidsdk/Sdk"
 set -gx NDK_HOME "$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
+alias rr "rm -rf"
+alias clean "rm -rf .* *"
