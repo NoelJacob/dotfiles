@@ -173,6 +173,7 @@ alias rip 'expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" | sort | tail -200 | nl'
 
 zoxide init fish | source
 set -gx PATH ~/.local/bin ~/Applications/depot_tools $PATH ~/.bun/bin ~/.cargo/bin ~/fvm/default/bin
+set -gx JAVA_HOME /usr/lib/jvm/default
 set -gx ANDROID_HOME "$HOME/.androidsdk/Sdk"
 set -gx NDK_HOME "$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
 alias rr "rm -rf"
