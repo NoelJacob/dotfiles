@@ -177,4 +177,5 @@ set -gx JAVA_HOME /usr/lib/jvm/default
 set -gx ANDROID_HOME "$HOME/.androidsdk/Sdk"
 set -gx NDK_HOME "$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
 alias rr "rm -rf"
-alias cn "rm -rf .*; rm -rf *"
+alias cleardir "rm -rf .*; rm -rf *"
+alias addpkg "sudo pacman -Syu"
