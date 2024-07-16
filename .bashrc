@@ -90,3 +90,5 @@ export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
 alias rr="rm -rf"
 alias cleardir="rm -rf .*; rm -rf *"
 alias addpkg="sudo pacman -Syu"
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.local/lib/mojo
+export PATH=$PATH:~/.modular/pkg/packages.modular.com_mojo/bin/
