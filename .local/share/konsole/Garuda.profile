@@ -1,12 +1,12 @@
 [Appearance]
-BoldIntense=false
+BoldIntense=true
 ColorScheme=Sweet2
 Font=FiraCode Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 LineSpacing=0
 UseFontLineChararacters=true
 
 [Cursor Options]
-CursorShape=0
+CursorShape=1
 CustomCursorColor=255,0,0
 UseCustomCursorColor=false
 
@@ -17,7 +17,7 @@ Name=Garuda
 Parent=FALLBACK/
 ShowTerminalSizeHint=false
 TerminalColumns=110
-TerminalMargin=8
+TerminalMargin=0
 
 [Interaction Options]
 AutoCopySelectedText=true
@@ -34,4 +34,4 @@ HistoryMode=2
 ScrollBarPosition=1
 
 [Terminal Features]
-BlinkingCursorEnabled=false
+BlinkingCursorEnabled=true
