@@ -116,10 +116,6 @@ alias l. 'eza -ald --color=always --group-directories-first --icons .*' # show o
 
 # Replace some more things with better alternatives
 alias cat 'bat --style header --style snip --style changes --style header'
-if not test -x /usr/bin/yay; and test -x /usr/bin/paru
-    alias yay 'paru'
-end
-
 
 # Common use
 alias .. 'cd ..'
@@ -172,10 +168,21 @@ alias rip 'expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" | sort | tail -200 | nl'
 # end
 
 zoxide init fish | source
-set -gx PATH ~/.local/bin ~/Applications/depot_tools ~/.modular/pkg/packages.modular.com_mojo/bin $PATH ~/.bun/bin ~/.cargo/bin ~/fvm/default/bin
+
+set -gx PATH ~/.local/bin ~/Applications/depot_tools $PATH ~/.bun/bin ~/.cargo/bin ~/fvm/default/bin
 set -gx JAVA_HOME /usr/lib/jvm/default
-set -gx ANDROID_HOME "$HOME/.androidsdk/Sdk"
+set -gx ANDROID_HOME "$HOME/.androidsdk"
 set -gx NDK_HOME "$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
 alias rr "rm -rf"
-alias cleardir "rm -rf .*; rm -rf *"
+alias rrdir "rm -rf .*; rm -rf *"
 alias addpkg "sudo pacman -Syu"
+set -gx XDG_CONFIG_HOME "$HOME/.config"
+set -gx XDG_CACHE_HOME "$HOME/.cache"
+set -gx XDG_DATA_HOME "$HOME/.local/share"
+set -gx XDG_STATE_HOME "$HOME/.local/state" 
+
+set -gx LD_LIBRARY_PATH $LD_LIBRARY_PATH:~/.local/lib/mojo
+set -gx PATH $PATH ~/.modular/pkg/packages.modular.com_mojo/bin/
+
+source "/opt/mambaforge/etc/fish/conf.d/conda.fish"
+source "/opt/mambaforge/etc/fish/conf.d/mamba.fish"

@@ -2,23 +2,21 @@
 [[ $- != *i* ]] && return
 
 # Load starship prompt if starship is installed
-if  [ -x /usr/bin/starship ]; then
-    __main() {
-        local major="${BASH_VERSINFO[0]}"
-        local minor="${BASH_VERSINFO[1]}"
+__main() {
+    local major="${BASH_VERSINFO[0]}"
+    local minor="${BASH_VERSINFO[1]}"
 
-        if ((major > 4)) || { ((major == 4)) && ((minor >= 1)); }; then
-            source <("/usr/bin/starship" init bash --print-full-init)
-        else
-            source /dev/stdin <<<"$("/usr/bin/starship" init bash --print-full-init)"
-        fi
-    }
-    __main
-    unset -f __main
-fi
+    if ((major > 4)) || { ((major == 4)) && ((minor >= 1)); }; then
+        source <("/usr/bin/starship" init bash --print-full-init)
+    else
+        source /dev/stdin <<<"$("/usr/bin/starship" init bash --print-full-init)"
+    fi
+}
+__main
+unset -f __main
 
 # Advanced command-not-found hook
-source /usr/share/doc/find-the-command/ftc.bash
+source /usr/share/doc/find-the-command/ftc.bash noupdate
 
 ## Useful aliases
 
@@ -85,10 +83,18 @@ eval "$(zoxide init bash)"
 
 export PATH="$HOME/.local/bin:$PATH:$HOME/.bun/bin:$HOME/.cargo/bin:$HOME/fvm/default/bin"
 export JAVA_HOME=/usr/lib/jvm/default
-export ANDROID_HOME="$HOME/.androidsdk/Sdk"
+export ANDROID_HOME="$HOME/.androidsdk"
 export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
 alias rr="rm -rf"
-alias cleardir="rm -rf .*; rm -rf *"
+alias rrdir="rm -rf .*; rm -rf *"
 alias addpkg="sudo pacman -Syu"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state" 
+
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.local/lib/mojo
 export PATH=$PATH:~/.modular/pkg/packages.modular.com_mojo/bin/
+
+source "/opt/mambaforge/etc/profile.d/conda.sh"
+source "/opt/mambaforge/etc/profile.d/mamba.sh"
