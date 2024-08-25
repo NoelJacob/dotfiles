@@ -17,7 +17,7 @@ Name=Garuda
 Parent=FALLBACK/
 ShowTerminalSizeHint=false
 TerminalColumns=110
-TerminalMargin=0
+TerminalMargin=5
 
 [Interaction Options]
 AutoCopySelectedText=true
