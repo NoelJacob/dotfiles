@@ -135,7 +135,7 @@ alias hw 'hwinfo --short'                          # Hardware Info
 alias ip 'ip -color'
 alias psmem 'ps auxf | sort -nr -k 4'
 alias psmem10 'ps auxf | sort -nr -k 4 | head -10'
-alias rmpkg 'sudo pacman -Rdd'
+# alias rmpkg 'sudo pacman -Rdd'
 alias tarnow 'tar -acf '
 alias untar 'tar -zxvf '
 alias upd '/usr/bin/garuda-update'
@@ -176,10 +176,12 @@ set -gx NDK_HOME "$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
 alias rr "rm -rf"
 alias rrdir "rm -rf .*; rm -rf *"
 alias addpkg "sudo pacman -Syu"
+alias rmpkg "sudo pacman -Runs"
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx XDG_CACHE_HOME "$HOME/.cache"
 set -gx XDG_DATA_HOME "$HOME/.local/share"
 set -gx XDG_STATE_HOME "$HOME/.local/state" 
+set -gx CHROME_EXECUTABLE "/usr/bin/thorium-browser"
 
 set -gx LD_LIBRARY_PATH $LD_LIBRARY_PATH:~/.local/lib/mojo
 set -gx PATH $PATH ~/.modular/pkg/packages.modular.com_mojo/bin/

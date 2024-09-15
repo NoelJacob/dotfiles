@@ -88,10 +88,13 @@ export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
 alias rr="rm -rf"
 alias rrdir="rm -rf .*; rm -rf *"
 alias addpkg="sudo pacman -Syu"
+alias rmpkg="sudo pacman -Runs"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state" 
+export CHROME_EXECUTABLE="/usr/bin/thorium-browser"
+
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.local/lib/mojo
 export PATH=$PATH:~/.modular/pkg/packages.modular.com_mojo/bin/
