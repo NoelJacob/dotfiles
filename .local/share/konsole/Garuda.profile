@@ -13,6 +13,7 @@ UseCustomCursorColor=false
 [General]
 AlternatingBars=1
 Command=/usr/bin/fish
+Directory=/tmp
 Name=Garuda
 Parent=FALLBACK/
 ShowTerminalSizeHint=false

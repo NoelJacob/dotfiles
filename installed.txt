@@ -21,3 +21,4 @@ lazygit
 bottom
 gdu
 cursor-bin
+zed-preview-bin

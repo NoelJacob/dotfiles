@@ -101,7 +101,7 @@ end
 # Cleanup local orphaned packages
 function cleanup
     while pacman -Qdtq
-        sudo pacman -R (pacman -Qdtq)
+        sudo pacman -Ru (pacman -Qdtq)
     end
 end
 
@@ -176,7 +176,8 @@ set -gx NDK_HOME "$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
 alias rr "rm -rf"
 alias rrdir "rm -rf .*; rm -rf *"
 alias addpkg "sudo pacman -Syu"
-alias rmpkg "sudo pacman -Runs"
+alias rmpkg "sudo pacman -Ru"
+alias g "git clone --filter=blob:none $argv"
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx XDG_CACHE_HOME "$HOME/.cache"
 set -gx XDG_DATA_HOME "$HOME/.local/share"
