@@ -1,10 +1,12 @@
 thorium-browser-bin
 rustup
+(cargo-binstall
+cargo-update
+uv)
 mambaforge
 jetbrains-toolbox
 (intellij-idea-ultimate)
 code-insiders-bin
-pyenv
 jdk17-openjdk
 (.androidsdk)
 zoxide
@@ -22,3 +24,4 @@ bottom
 gdu
 cursor-bin
 zed-preview-bin
+uv
