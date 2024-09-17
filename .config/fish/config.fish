@@ -183,6 +183,7 @@ set -gx XDG_CACHE_HOME "$HOME/.cache"
 set -gx XDG_DATA_HOME "$HOME/.local/share"
 set -gx XDG_STATE_HOME "$HOME/.local/state" 
 set -gx CHROME_EXECUTABLE "/usr/bin/thorium-browser"
+set -gx BUN_INSTALL "$HOME/.bun"
 
 set -gx LD_LIBRARY_PATH $LD_LIBRARY_PATH:~/.local/lib/mojo
 set -gx PATH $PATH ~/.modular/pkg/packages.modular.com_mojo/bin/

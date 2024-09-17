@@ -16,12 +16,11 @@ ninja
 ttf-jetbrains-mono-nerd
 ttf-cascadia-code-nerd
 neovim
-tree-sitter-cli
 kitty
 ripgrep
 lazygit
-bottom
-gdu
+fd
+tree-sitter-cli
 cursor-bin
 zed-preview-bin
 uv

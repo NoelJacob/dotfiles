@@ -95,7 +95,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state" 
 export CHROME_EXECUTABLE="/usr/bin/thorium-browser"
-
+export BUN_INSTALL="$HOME/.bun"
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.local/lib/mojo
 export PATH=$PATH:~/.modular/pkg/packages.modular.com_mojo/bin/
