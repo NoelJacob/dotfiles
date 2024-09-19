@@ -167,26 +167,29 @@ alias rip 'expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" | sort | tail -200 | nl'
 #    fastfetch --config neofetch.jsonc
 # end
 
-zoxide init fish | source
+
+set -gx XDG_CONFIG_HOME "$HOME/.config"
+set -gx XDG_CACHE_HOME "$HOME/.cache"
+set -gx XDG_DATA_HOME "$HOME/.local/share"
+set -gx XDG_STATE_HOME "$HOME/.local/state" 
 
 set -gx PATH ~/.local/bin ~/Applications/depot_tools $PATH ~/.bun/bin ~/.cargo/bin ~/fvm/default/bin
-set -gx JAVA_HOME /usr/lib/jvm/default
+set -gx CHROME_EXECUTABLE "/usr/bin/thorium-browser"
+set -gx BUN_INSTALL "$HOME/.bun"
+set -gx JAVA_HOME "/usr/lib/jvm/default"
 set -gx ANDROID_HOME "$HOME/.androidsdk"
 set -gx NDK_HOME "$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
+
+# set -gx LD_LIBRARY_PATH $LD_LIBRARY_PATH ~/.local/lib/mojo
+# set -gx PATH $PATH ~/.modular/pkg/packages.modular.com_mojo/bin/
+
 alias rr "rm -rf"
 alias rrdir "rm -rf .*; rm -rf *"
 alias addpkg "SKIP_MIRRORLIST=1 update && sudo pacman -Sy"
 alias rmpkg "sudo pacman -Ru"
 alias g "git clone --filter=blob:none $argv"
-set -gx XDG_CONFIG_HOME "$HOME/.config"
-set -gx XDG_CACHE_HOME "$HOME/.cache"
-set -gx XDG_DATA_HOME "$HOME/.local/share"
-set -gx XDG_STATE_HOME "$HOME/.local/state" 
-set -gx CHROME_EXECUTABLE "/usr/bin/thorium-browser"
-set -gx BUN_INSTALL "$HOME/.bun"
-
-set -gx LD_LIBRARY_PATH $LD_LIBRARY_PATH:~/.local/lib/mojo
-set -gx PATH $PATH ~/.modular/pkg/packages.modular.com_mojo/bin/
 
 source "/opt/mambaforge/etc/fish/conf.d/conda.fish"
 source "/opt/mambaforge/etc/fish/conf.d/mamba.fish"
+
+zoxide init fish | source

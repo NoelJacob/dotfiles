@@ -79,26 +79,29 @@ alias jctl="journalctl -p 3 -xb"
 # Recent installed packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
-eval "$(zoxide init bash)"
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
 
 export PATH="$HOME/.local/bin:$PATH:$HOME/.bun/bin:$HOME/.cargo/bin:$HOME/fvm/default/bin"
-export JAVA_HOME=/usr/lib/jvm/default
+export JAVA_HOME="/usr/lib/jvm/default"
 export ANDROID_HOME="$HOME/.androidsdk"
 export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
+export CHROME_EXECUTABLE="/usr/bin/thorium-browser"
+export BUN_INSTALL="$HOME/.bun"
+
+# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.local/lib/mojo
+# export PATH=$PATH:~/.modular/pkg/packages.modular.com_mojo/bin/
+
 alias rr="rm -rf"
 alias rrdir="rm -rf .*; rm -rf *"
 alias addpkg="SKIP_MIRRORLIST=1 update && sudo pacman -Sy"
 alias rmpkg="sudo pacman -Ru"
-alias g="git clone --filter=blob:none"
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_STATE_HOME="$HOME/.local/state" 
-export CHROME_EXECUTABLE="/usr/bin/thorium-browser"
-export BUN_INSTALL="$HOME/.bun"
-
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.local/lib/mojo
-export PATH=$PATH:~/.modular/pkg/packages.modular.com_mojo/bin/
+alias g="git clone --filter=blob:none" 
 
 source "/opt/mambaforge/etc/profile.d/conda.sh"
 source "/opt/mambaforge/etc/profile.d/mamba.sh"
+
+eval "$(zoxide init bash)"
