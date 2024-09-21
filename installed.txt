@@ -1,5 +1,5 @@
-thorium-browser-bin
 rustup
+thorium-browser-bin
 (cargo-binstall
 cargo-update
 uv)
@@ -25,3 +25,4 @@ cursor-bin
 zed-preview-bin
 uv
 bun-bin
+just

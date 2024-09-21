@@ -1,3 +1,4 @@
+#!/bin/env python
 import subprocess
 import sys
 
@@ -26,7 +27,8 @@ def default(repo_url):
 
 
 def do(url):
-    match = url.split('/tree/main/', 1)
+    match = url.split('/tree/', 1)
+    match = match[1:]
     git = match[0]
     full_folder = match[1]
     folder = git.rsplit('/', 1)[1]

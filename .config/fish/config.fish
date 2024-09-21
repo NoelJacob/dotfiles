@@ -179,7 +179,7 @@ set -gx BUN_INSTALL "$HOME/.bun"
 set -gx JAVA_HOME "/usr/lib/jvm/default"
 set -gx ANDROID_HOME "$HOME/.androidsdk"
 set -gx NDK_HOME "$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
-
+set -gx TARGET "x86_64-unknown-linux-gnu"
 # set -gx LD_LIBRARY_PATH $LD_LIBRARY_PATH ~/.local/lib/mojo
 # set -gx PATH $PATH ~/.modular/pkg/packages.modular.com_mojo/bin/
 
