@@ -188,6 +188,7 @@ alias rrdir "rm -rf .*; rm -rf *"
 alias addpkg "SKIP_MIRRORLIST=1 update && sudo pacman -Sy"
 alias rmpkg "sudo pacman -Ru"
 alias g "git clone --filter=blob:none $argv"
+alias ai "aichat"
 
 source "/opt/mambaforge/etc/fish/conf.d/conda.fish"
 source "/opt/mambaforge/etc/fish/conf.d/mamba.fish"

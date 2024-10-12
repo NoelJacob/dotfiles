@@ -1,11 +1,13 @@
 rustup
-thorium-browser-bin
 (cargo-binstall
 cargo-update
-uv)
+uv
+aichat)
+thorium-browser-bin
 mambaforge
 jetbrains-toolbox
-(intellij-idea-ultimate)
+(intellij-idea-ultimate
+clion)
 code-insiders-bin
 jdk17-openjdk
 (.androidsdk)
