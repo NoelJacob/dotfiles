@@ -135,7 +135,7 @@ alias hw 'hwinfo --short'                          # Hardware Info
 alias ip 'ip -color'
 alias psmem 'ps auxf | sort -nr -k 4'
 alias psmem10 'ps auxf | sort -nr -k 4 | head -10'
-# alias rmpkg 'sudo pacman -Rdd'
+alias rmpkg 'sudo pacman -Rdd'
 alias tarnow 'tar -acf '
 alias untar 'tar -zxvf '
 alias upd '/usr/bin/garuda-update'
@@ -173,7 +173,7 @@ set -gx XDG_CACHE_HOME "$HOME/.cache"
 set -gx XDG_DATA_HOME "$HOME/.local/share"
 set -gx XDG_STATE_HOME "$HOME/.local/state" 
 
-set -gx PATH ~/.local/bin ~/Applications/depot_tools $PATH ~/.bun/bin ~/.cargo/bin ~/fvm/default/bin
+set -gx PATH ~/.local/bin ~/Applications/depot_tools $PATH ~/.bun/bin ~/.cargo/bin ~/.fvm/default/bin
 set -gx CHROME_EXECUTABLE "/usr/bin/thorium-browser"
 set -gx BUN_INSTALL "$HOME/.bun"
 set -gx JAVA_HOME "/usr/lib/jvm/default"
@@ -186,9 +186,9 @@ set -gx TARGET "x86_64-unknown-linux-gnu"
 alias rr "rm -rf"
 alias rrdir "rm -rf .*; rm -rf *"
 alias addpkg "SKIP_MIRRORLIST=1 update && sudo pacman -Sy"
-alias rmpkg "sudo pacman -Ru"
 alias g "git clone --filter=blob:none $argv"
 alias ai "aichat"
+alias q "exit"
 
 source "/opt/mambaforge/etc/fish/conf.d/conda.fish"
 source "/opt/mambaforge/etc/fish/conf.d/mamba.fish"

@@ -17,6 +17,7 @@ trim_at = "-"
 # Third param
 [directory]
 style = "purple"
+disabled = false
 truncate_to_repo = true
 truncation_length = 0
 truncation_symbol = "repo: "
