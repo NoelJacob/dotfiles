@@ -11,8 +11,8 @@ export CHROME_EXECUTABLE="/usr/bin/thorium-browser"
 export BUN_INSTALL="$HOME/.bun"
 export TARGET="x86_64-unknown-linux-gnu"
 
-# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.local/lib/mojo
-# export PATH=$PATH:~/.modular/pkg/packages.modular.com_mojo/bin/
+export MODULAR_HOME=~/.local/share/modular
+export PATH=$PATH:~/.local/share/modular/pkg/packages.modular.com_mojo/bin/
 
 
 # If not running interactively, don't do anything

@@ -50,3 +50,5 @@ neovim-drop-in
 nodejs-lts-iron
 poetry
 notion-app-electron
+cuda
+hyperfine
