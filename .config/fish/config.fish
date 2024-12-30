@@ -180,8 +180,6 @@ set -gx JAVA_HOME "/usr/lib/jvm/default"
 set -gx ANDROID_HOME "$HOME/.androidsdk"
 set -gx NDK_HOME "$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
 set -gx TARGET "x86_64-unknown-linux-gnu"
-set -gx MODULAR_HOME ~/.local/share/modular
-set -gx PATH $PATH ~/.local/share/modular/pkg/packages.modular.com_mojo/bin/
 
 alias rr "rm -rf"
 alias rrdir "rm -rf .*; rm -rf *"
@@ -194,4 +192,3 @@ source "/opt/mambaforge/etc/fish/conf.d/conda.fish"
 source "/opt/mambaforge/etc/fish/conf.d/mamba.fish"
 
 zoxide init fish | source
-set -x LD_LIBRARY_PATH /home/noel/.local/lib/arch-mojo $LD_LIBRARY_PATH

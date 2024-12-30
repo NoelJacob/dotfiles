@@ -1,43 +1,73 @@
 #!/bin/env python
 import subprocess
 import sys
+import os
 
-
-def run(command, folder=None):
+def execute_command(command, working_directory=None):
+    """Executes a shell command and handles potential errors."""
     try:
-        subprocess.run(command, check=True, shell=True, cwd=folder)
+        process = subprocess.run(
+            command,
+            check=True,
+            shell=True,
+            cwd=working_directory,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+        )
+        return process.stdout.strip()
     except subprocess.CalledProcessError as e:
-        print(f"Error occurred: {e}")
-        exit(1)
+        print(f"Error executing command: {e}")
+        print(f"Stdout: {e.stdout}")
+        print(f"Stderr: {e.stderr}")
+        sys.exit(1)
 
-
-def append(filename, text):
-    with open(filename, 'a') as file:
-        file.write(text)
-
-
-def default(repo_url):
+def get_default_branch(repo_url):
+    """Retrieves the default branch of a remote Git repository."""
     command = f"git ls-remote --symref {repo_url} HEAD"
-    process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
-    output, error = process.communicate()
-    if process.returncode != 0:
-        print(f"Error occurred: {error.decode('utf-8')}")
-        exit(1)
-    return output.decode('utf-8')[16:].split('\t', 1)[0]
+    output = execute_command(command)
+    return output.split('\n')[0].split('\t')[0].replace('ref: refs/heads/', '')
+    
 
+def clone_folder(repo_url, folder_path):
+    """Clones a specific folder from a Git repository."""
+    # Extract repository name and folder details
+    try:
+        base_url, _, repo_name, _, branch, *folder_parts = folder_path.split("/")
+        repo_name = repo_name.split(".git")[0] if repo_name.endswith(".git") else repo_name
+        folder_name = folder_parts[-1]
+        full_folder_path = "/".join(folder_parts)
+        repo_url = f"{base_url}/{repo_name}"
+    except ValueError:
+        print(
+            "Invalid folder path format. Use: 'https://github.com/user/repo/tree/branch/folder/subfolder'"
+        )
+        sys.exit(1)
 
-def do(url):
-    match = url.split('/tree/', 1)
-    match = match[1:]
-    git = match[0]
-    full_folder = match[1]
-    folder = git.rsplit('/', 1)[1]
-    branch = default(git)
-    run(f'git init {folder} -b {branch}')
-    run(f'git remote add origin {git}', folder)
-    run(f'git config core.sparseCheckout true', folder)
-    append(f'{folder}/.git/info/sparse-checkout', full_folder)
-    run(f'git pull origin {branch} --depth 1', folder)
+    # Get default branch if not specified
+    if not branch:
+        branch = get_default_branch(repo_url)
 
+    # Local directory setup
+    local_dir = folder_name
 
-do(sys.argv[1])
+    # Git operations
+    execute_command(f"git init --initial-branch={branch} {local_dir}")
+    execute_command(f"git remote add origin {repo_url}", local_dir)
+    execute_command("git config core.sparseCheckout true", local_dir)
+
+    # Sparse checkout setup
+    sparse_checkout_file = os.path.join(local_dir, ".git/info/sparse-checkout")
+    with open(sparse_checkout_file, "w") as f:
+        f.write(f"{full_folder_path}\n")
+
+    execute_command(f"git pull origin {branch} --depth=1", local_dir)
+    print(f"Folder '{full_folder_path}' from branch '{branch}' cloned successfully into '{local_dir}'.")
+
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python script.py <folder_url>")
+        sys.exit(1)
+
+    folder_url = sys.argv[1]
+    clone_folder(folder_url.split('/tree/')[0], folder_url)
