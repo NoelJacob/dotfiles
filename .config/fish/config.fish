@@ -180,6 +180,7 @@ set -gx JAVA_HOME "/usr/lib/jvm/default"
 set -gx ANDROID_HOME "$HOME/.androidsdk"
 set -gx NDK_HOME "$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
 set -gx TARGET "x86_64-unknown-linux-gnu"
+set -gx HF_HOME "/mnt/extlinux/var/cache/huggingface"
 
 alias rr "rm -rf"
 alias rrdir "rm -rf .*; rm -rf *"

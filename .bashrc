@@ -10,7 +10,7 @@ export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
 export CHROME_EXECUTABLE="/usr/bin/thorium-browser"
 export BUN_INSTALL="$HOME/.bun"
 export TARGET="x86_64-unknown-linux-gnu"
-
+export HF_HOME="/mnt/extlinux/var/cache/huggingface"
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
